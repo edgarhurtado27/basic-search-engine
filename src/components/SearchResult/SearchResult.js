@@ -9,7 +9,7 @@ const renderResult = ({text, title, id, slot}) => {
         justifyContent="space-between"
         direction="row">
 
-        <Grid item xs={10}
+        <Grid item md={10} xs={9}
           container
           justifyContent="center"
           direction="column"
@@ -17,7 +17,7 @@ const renderResult = ({text, title, id, slot}) => {
           <Typography display="inline" variant="h4">{title}</Typography>
           <Typography display="inline" variant="subtitle1">{text}</Typography>
         </Grid>
-        <Grid item xs={2}
+        <Grid item md={2} xs={3}
           container
           justifyContent="center"
           direction="column"

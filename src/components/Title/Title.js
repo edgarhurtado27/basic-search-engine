@@ -5,9 +5,9 @@ const Title = () => (
   <Grid item
     container
     justifyContent="center"
-    alignItems="flex-end"
+    alignItems="center"
     xs={12}>
-    <Typography display="inline" variant="h3">Buscar bibliografia</Typography>
+    <Typography display="inline" variant="h3">Buscar monografia</Typography>
   </Grid>
 )
 
