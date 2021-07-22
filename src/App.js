@@ -2,7 +2,6 @@ import {useState} from 'react';
 import {Container, Grid, Typography, TextField, Button, ListItem} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import useMiniSearch from './hooks/useMiniSearch'
-import './App.css';
 
 
 function App() {
@@ -73,6 +72,7 @@ function App() {
           alignItems="flex-end"
           xs={12}>
           <Grid item
+            container
             justifyContent="center"
             alignItems="flex-end"
             xs={8}>
