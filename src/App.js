@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useCallback} from 'react';
 import useMiniSearch from './hooks/useMiniSearch'
 
 import Main from './pages/Main';
@@ -9,26 +9,37 @@ import SearchResult from './components/SearchResult/SearchResult'
 
 function App() {
   const [result, setResult] = useState([])
+  const [notFoundMsg, setNotFoundMsg] = useState(false)
   const {searchEngine} = useMiniSearch()
 
-  const searchData = (text) => {
-    if (text && text.length > 5) {
-      const coincidencias = searchEngine.search(text)
-      setResult(coincidencias)
-    }
-  }
+  const searchData = useCallback((text) => {
+    const coincidencias = searchEngine.search(text)
 
-  const handleChange = (event) => {
-    const value = event && event.target && event.target.value
-    searchData(value)
-  }
+    setResult(coincidencias)
+    if (coincidencias && coincidencias.length === 0)
+      setNotFoundMsg(true)
+
+  }, [searchEngine])
+
+  const handleChange = useCallback((event) => {
+    const value = event.target.value || ""
+
+    if (value && value.length > 5) {
+      searchData(value)
+    }
+    else if (value === "") {
+      setResult([])
+      setNotFoundMsg(false)
+    }
+
+  }, [setNotFoundMsg, searchData])
 
 
   return (
     <Main>
       <Title />
       <SearchBar handleChange={handleChange} cleanResults={() => setResult([])} />
-      <SearchResult result={result} />
+      <SearchResult result={result} notFoundMsg={notFoundMsg} />
     </Main>
   );
 }

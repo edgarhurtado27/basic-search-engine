@@ -1,7 +1,7 @@
 import React from 'react'
 import {Grid, Typography, List, ListItem} from '@material-ui/core';
 
-const renderResult = ({text, title, id}) => {
+const renderResult = ({text, title, id, slot}) => {
   return (
     <ListItem key={id} button>
       <Grid
@@ -22,7 +22,7 @@ const renderResult = ({text, title, id}) => {
           justifyContent="center"
           direction="column"
           alignItems="center">
-          <Typography display="inline" variant="h3">{id}</Typography>
+          <Typography display="inline" variant="h3" color="secondary">{slot}</Typography>
         </Grid>
 
       </Grid>
@@ -30,15 +30,23 @@ const renderResult = ({text, title, id}) => {
   )
 }
 
-const SearchResult = ({result}) => {
-  return (
-    <List>
-      {
-        result && result.length > 0 && result.map(item => renderResult(item))
-      }
-    </List>
-  )
-}
+const SearchResult = ({result, notFoundMsg}) => (
+  <List>
+    {
+      result && result.length > 0 && result.map(item => renderResult(item))
+    }
+    {
+      result && result.length === 0 && notFoundMsg &&
+      <Grid item xs={12}
+        container
+        justifyContent="center"
+        direction="column"
+        alignItems="center">
+        <Typography display="inline" variant="h3" color="primary">Sin resultados :(</Typography>
+      </Grid>
+    }
+  </List >
+)
 
 export default SearchResult
 

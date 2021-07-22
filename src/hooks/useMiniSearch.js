@@ -9,8 +9,8 @@ const useMiniSearch = () => {
   useEffect(() => {
     const createMiniSearchInstance = () => {
       const miniSearch = new MiniSearch({
-        fields: ['title', 'text'], // fields to index for full-text search
-        storeFields: ['title', 'text'] // fields to return with search results
+        fields: ['title'], // fields to index for full-text search
+        storeFields: ['title', 'text', 'slot'] // fields to return with search results
 
       })
       miniSearch.addAll(documents)
