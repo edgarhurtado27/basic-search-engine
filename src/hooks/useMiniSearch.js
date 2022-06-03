@@ -13,7 +13,8 @@ const useMiniSearch = () => {
         storeFields: ['title', 'text', 'slot'] // fields to return with search results
 
       })
-      setSearchEngine(miniSearch.addAll(documents))
+      miniSearch.addAll(documents)
+      setSearchEngine(miniSearch)
     }
 
     if (!searchEngine) {
