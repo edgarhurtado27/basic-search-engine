@@ -4,14 +4,14 @@
     "main.js.map": "/basic-search-engine/static/js/main.b9bfc36c.chunk.js.map",
     "runtime-main.js": "/basic-search-engine/static/js/runtime-main.40690862.js",
     "runtime-main.js.map": "/basic-search-engine/static/js/runtime-main.40690862.js.map",
-    "static/js/2.c4417558.chunk.js": "/basic-search-engine/static/js/2.c4417558.chunk.js",
-    "static/js/2.c4417558.chunk.js.map": "/basic-search-engine/static/js/2.c4417558.chunk.js.map",
+    "static/js/2.dadbc3f9.chunk.js": "/basic-search-engine/static/js/2.dadbc3f9.chunk.js",
+    "static/js/2.dadbc3f9.chunk.js.map": "/basic-search-engine/static/js/2.dadbc3f9.chunk.js.map",
     "index.html": "/basic-search-engine/index.html",
-    "static/js/2.c4417558.chunk.js.LICENSE.txt": "/basic-search-engine/static/js/2.c4417558.chunk.js.LICENSE.txt"
+    "static/js/2.dadbc3f9.chunk.js.LICENSE.txt": "/basic-search-engine/static/js/2.dadbc3f9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.40690862.js",
-    "static/js/2.c4417558.chunk.js",
+    "static/js/2.dadbc3f9.chunk.js",
     "static/js/main.b9bfc36c.chunk.js"
   ]
 }
