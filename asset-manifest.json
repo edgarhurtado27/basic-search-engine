@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/basic-search-engine/static/js/main.b1c668fc.js",
+    "main.js": "/basic-search-engine/static/js/main.07284f69.js",
     "index.html": "/basic-search-engine/index.html",
-    "main.b1c668fc.js.map": "/basic-search-engine/static/js/main.b1c668fc.js.map"
+    "main.07284f69.js.map": "/basic-search-engine/static/js/main.07284f69.js.map"
   },
   "entrypoints": [
-    "static/js/main.b1c668fc.js"
+    "static/js/main.07284f69.js"
   ]
 }
