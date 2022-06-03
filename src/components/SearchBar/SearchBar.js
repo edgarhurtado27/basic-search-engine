@@ -1,38 +1,40 @@
-import React from 'react'
-import {Grid, TextField, Button} from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
+import React from "react";
+import PropTypes from "prop-types";
 
-const SearchBar = ({handleChange, cleanResults}) => (
+import { Grid, TextField, Button } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
+
+const SearchBar = ({ updateTerm, cleanResults, term }) => (
   <>
-    <Grid item
-      container
-      justifyContent="center"
-      alignItems="flex-end"
-      xs={12}>
-      <Grid item
-        container
-        justifyContent="center"
-        alignItems="flex-end"
-        xs={8}>
-        <TextField id="standard-basic" fullWidth label="Inicia busqueda" onChange={handleChange} />
+    <Grid item container justifyContent="center" alignItems="flex-end" xs={12}>
+      <Grid item container justifyContent="center" alignItems="flex-end" xs={8}>
+        <TextField
+          id="standard-basic"
+          fullWidth
+          label="Inicia busqueda"
+          onChange={updateTerm}
+          value={term}
+        />
       </Grid>
     </Grid>
 
-    <Grid item
-      container
-      justifyContent="center"
-      alignItems="flex-end"
-      xs={12}>
+    <Grid item container justifyContent="center" alignItems="flex-end" xs={12}>
       <Button
         variant="contained"
         color="secondary"
         startIcon={<DeleteIcon />}
-        onClick={cleanResults}>
+        onClick={cleanResults}
+      >
         Limpiar resultados
       </Button>
     </Grid>
   </>
-)
+);
 
-export default SearchBar
+SearchBar.propTypes = {
+  updateTerm: PropTypes.string.isRequired,
+  cleanResults: PropTypes.func.isRequired,
+  term: PropTypes.string.isRequired,
+};
 
+export default SearchBar;

@@ -1,29 +1,26 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
-import MiniSearch from 'minisearch'
-import documents from '../resources/data'
+import MiniSearch from "minisearch";
+import documents from "../resources/data";
 
 const useMiniSearch = () => {
-  const [searchEngine, setSearchEngine] = useState(null)
+  const [searchEngine, setSearchEngine] = useState(null);
 
   useEffect(() => {
     const createMiniSearchInstance = () => {
       const miniSearch = new MiniSearch({
-        fields: ['title'], // fields to index for full-text search
-        storeFields: ['title', 'text', 'slot'] // fields to return with search results
-
-      })
-      miniSearch.addAll(documents)
-      setSearchEngine(miniSearch)
-    }
+        fields: ["title"], // fields to index for full-text search
+        storeFields: ["title", "text", "slot"], // fields to return with search results
+      });
+      miniSearch.addAll(documents);
+      setSearchEngine(miniSearch);
+    };
 
     if (!searchEngine) {
-      createMiniSearchInstance()
+      createMiniSearchInstance();
     }
+  }, [searchEngine, setSearchEngine]);
+  return { searchEngine };
+};
 
-  }, [searchEngine, setSearchEngine])
-  return {searchEngine}
-}
-
-export default useMiniSearch
-
+export default useMiniSearch;
