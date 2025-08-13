@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Grid, TextField, Button } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
+import {Grid, TextField, Button} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const SearchBar = ({ updateTerm, cleanResults, term }) => (
   <>

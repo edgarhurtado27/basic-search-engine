@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid } from "@mui/material";
 
 // eslint-disable-next-line react/prop-types
 const Main = ({ children }) => {
